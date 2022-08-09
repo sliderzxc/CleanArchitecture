@@ -6,6 +6,10 @@ plugins {
 android {
     compileSdk 32
 
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
+
     defaultConfig {
         applicationId "com.test.testcleanarchitecture"
         minSdk 21

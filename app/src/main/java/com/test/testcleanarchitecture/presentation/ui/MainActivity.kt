@@ -2,7 +2,6 @@ package com.test.testcleanarchitecture.presentation.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
 import com.test.testcleanarchitecture.databinding.ActivityMainBinding
 import com.test.testcleanarchitecture.presentation.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel

@@ -116,7 +116,6 @@ class MainViewModelTest() {
         val expected = "${testUserName.name} ${testUserName.surname}"
         val actual = viewModel.result.value
 
-        Mockito.verify(getUserNameUseCase, times(1)).execute()
         Assertions.assertEquals(expected, actual)
     }
 

@@ -1,17 +1,25 @@
 package com.test.testcleanarchitecture.di
 
+import com.test.testcleanarchitecture.domain.repository.UserRepository
 import com.test.testcleanarchitecture.domain.usecase.GetUserNameUseCase
 import com.test.testcleanarchitecture.domain.usecase.SaveUserNameUseCase
-import org.koin.dsl.module
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 
-val domainModule = module {
+@Module
+@InstallIn(ViewModelComponent::class)
+class DomainModule {
 
-    factory<SaveUserNameUseCase> {
-        SaveUserNameUseCase(userRepository = get())
+    @Provides
+    fun provideGetUserNameUseCase(userRepository: UserRepository) : GetUserNameUseCase {
+        return GetUserNameUseCase(userRepository = userRepository)
     }
 
-    factory<GetUserNameUseCase> {
-        GetUserNameUseCase(userRepository = get())
+    @Provides
+    fun provideSaveUserNameUseCase(userRepository: UserRepository) : SaveUserNameUseCase {
+        return SaveUserNameUseCase(userRepository = userRepository)
     }
 
 }

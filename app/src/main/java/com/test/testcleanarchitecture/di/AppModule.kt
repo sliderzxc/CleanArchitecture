@@ -8,7 +8,7 @@ import dagger.Module
 import dagger.Provides
 
 @Module
-class AppModule(val context: Context) {
+class AppModule(private val context: Context) {
 
     @Provides
     fun provideMainViewModelFactory(
